@@ -1,0 +1,19 @@
+<button (click)="this.toggleCharacters()">
+  {{ showCharacters ? "Hide characters" : "Show characters" }}
+</button>
+<div *ngIf="showCharacters">
+  <div class="characters-section">
+    <div
+      class="characters-section__images"
+      *ngFor="let character of this.characterData"
+    >
+      <div class="character-card">
+        <img [src]="character.character.url" [alt]="character.character.name" />
+        <div class="character-image-body">
+          <p class="character-image__name">{{ character.character.name }}</p>
+          <p class="character-image__role">{{ character.role }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<button (click)="this.toggleEpisodes()">
+  {{ showEpisodes ? "Hide episodes" : "Show episodes" }}
+</button>
+<div *ngIf="showEpisodes">
+  <div class="episodes-section">
+    <div
+      class="episodes-section__urls"
+      *ngFor="let episode of this.episodeData"
+    >
+      <a [href]="episode.url" [target]="'_blank'"
+        >Cap {{ episode.mal_id }}: {{ episode.title }}</a
+      >
+    </div>
+  </div>
+</div>
